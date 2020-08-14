@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  owner_id: 1
+  start_day: 2020-08-14
+  end_day: 2020-08-14
+  work_start_time: 2020-08-14
+  work_end_time: 2020-08-14
+  prefecture_id: 1
+  address: MyString
+  daily_wage: 1
+  detail: MyText
+  status_id: 1
+  position_id: 1
+  assign_num: 1
+  place_name: MyString
+
+two:
+  name: MyString
+  owner_id: 1
+  start_day: 2020-08-14
+  end_day: 2020-08-14
+  work_start_time: 2020-08-14
+  work_end_time: 2020-08-14
+  prefecture_id: 1
+  address: MyString
+  daily_wage: 1
+  detail: MyText
+  status_id: 1
+  position_id: 1
+  assign_num: 1
+  place_name: MyString
