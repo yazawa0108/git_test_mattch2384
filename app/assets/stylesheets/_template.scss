@@ -1,20 +1,23 @@
 header {
-  background-color: #2b122e;
+  background-color: #8faec4;
   height: 80px;
+  padding: 0 20px;
 
-  h2 {
-    font-size: 35px;
-    color: #ceebcb;
-    margin: 0 auto;
-    line-height: 80px;
+  .header__title {
+    h2 {
+      font-size: 50px;
+      color: #c74949;
+      margin: 0 auto;
+      line-height: 80px;
+    }
   }
 
   #wrapper {
     nav {
       position: fixed;
       top: 0;
-      right: -300px;
-      width: 300px;
+      right: -220px;
+      width: 220px;
       height: 100%;
       padding-top: 50px;
       background: #333;
@@ -49,7 +52,7 @@ header {
         position: absolute;
         width: 30px;
         height: 4px;
-        background: #ceebcb;
+        background: #333;
         border-radius: 10px;
         -webkit-transition: all 400ms;
         transition: all 400ms;
@@ -91,5 +94,84 @@ header {
         right: 10%;
       }
     }
+  }
+}
+
+main {
+  text-align: center;
+  h3 {
+    width: 55%;
+    margin: 20px auto 10px;
+    background-color: orange;
+    border-radius: 6px;
+    padding: 3px 0;
+  }
+  .events__list {
+    padding: 12px 15px;
+    // background-color: yellowgreen;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    .event__index-card {
+      width: 300px;
+      border: 2px double #ddd;
+      list-style: none;
+      background-color: #ffffff;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+      position: relative;
+      margin-bottom: 32px;
+      &:hover {
+        opacity: 0.7;
+      }
+      a.event-detail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-indent: -999px;
+      }
+      h5 {
+        margin: 0 auto;
+        padding: 8px 0;
+        background-color: #f1d0aa;
+      }
+      table {
+        colgroup {
+          .header {
+            background-color: #f0efef;
+            width: 18%;
+          }
+          .content {
+            width: 25%;
+          }
+        }
+        tr {
+          line-height: 2;
+          th.header {
+            font-size: 0.7em;
+          }
+          th.content {
+            font-size: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(199, 199, 199);
+  height: 35px;
+  line-height: 35px;
+  color: rgb(58, 58, 58);
+  font-size: 11px;
+  p {
+    margin: 0 auto;
   }
 }

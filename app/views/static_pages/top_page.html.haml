@@ -1,5 +1,6 @@
 %header
-  %h2 Match 2384!!
+  .header__title
+    %h2 Match 2384!!
   #wrapper
     %p.btn-gnavi
       %span
@@ -13,8 +14,91 @@
         %li= link_to "プロフィール", "#"
         %li= link_to "ログアウト", "#"
 
+-# %main
+-#   %h3 募集中の案件一覧
+-#   .events__list
+-#     %ul
+-#       %li.event__index-card.index-card
+-#         %h5.event__title
+-#           イベントタイトルがここに入る
+-#         %ul
+-#           %li 勤務地：　東京都
+-#           %li ポジション：　運営ディレクター
+-#           %li 日程：　2020年10月11日
+-#           %li 日給：　25,000円
+    -# %ul- @events.each do |event|
+      -# %li= link_to
+
+
 %main
   %h3 募集中の案件一覧
+  .events__list
+    %ul
+      %li.event__index-card.index-card
+        %a.event-detail{ href: "#"}
+        %h5.event__title
+          イベントタイトルがここに入る
+        %table
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %tr
+            %th.header 勤務地
+            %th.content 東京都
+            %th.header ポジション
+            %th.content 運営ディレクター
+          %tr
+            %th.header 日程
+            %th.content 2020年10月11日
+            %th.header 日給
+            %th.content 25,000円
+
+      %li.event__index-card.index-card
+        %a.event-detail{ href: "#"}
+        %h5.event__title
+          イベントタイトルがここに入る
+        %table
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %tr
+            %th.header 勤務地
+            %th.content 東京都
+            %th.header ポジション
+            %th.content 運営ディレクター
+          %tr
+            %th.header 日程
+            %th.content 2020年10月11日
+            %th.header 日給
+            %th.content 25,000円
+
+      %li.event__index-card.index-card
+        %a.event-detail{ href: "#"}
+        %h5.event__title
+          イベントタイトルがここに入る
+        %table
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %colgroup
+            %col{ span: "1", class: "header"}
+            %col{ span: "1", class: "content"}
+          %tr
+            %th.header 勤務地
+            %th.content 東京都
+            %th.header ポジション
+            %th.content 運営ディレクター
+          %tr
+            %th.header 日程
+            %th.content 2020年10月11日
+            %th.header 日給
+            %th.content 25,000円
 
 
 %footer
