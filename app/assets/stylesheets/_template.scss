@@ -1,31 +1,41 @@
-header{
-  background-color: blue;
-  width: 100%;
-  h2{
+header {
+  background-color: #2b122e;
+  height: 80px;
+
+  h2 {
+    font-size: 35px;
+    color: #ceebcb;
     margin: 0 auto;
+    line-height: 80px;
   }
-  .wrapper nav {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100%;
-    padding-top: 50px;
-    background:#333;
-    font-size: 16px;
-    box-sizing: border-box;
-    z-index: 2;
-    li {
-      display: block;
-      padding: 20px 28px;
-      a {
-        text-decoration: none;
-        color: #ddd;
+
+  #wrapper {
+    nav {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      padding-top: 50px;
+      background: #333;
+      font-size: 16px;
+      box-sizing: border-box;
+      z-index: 2;
+
+      ul li {
+        display: block;
+        padding: 20px 28px;
+
+        a {
+          text-decoration: none;
+          color: #ddd;
+        }
       }
     }
+
     .btn-gnavi {
       position: fixed;
-      top: 20px;
+      top: 10px;
       right: 20px;
       width: 30px;
       height: 24px;
@@ -34,14 +44,51 @@ header{
       cursor: pointer;
       -webkit-transition: all 400ms;
       transition: all 400ms;
+
       span {
         position: absolute;
         width: 30px;
         height: 4px;
-        background: #666;
+        background: #ceebcb;
         border-radius: 10px;
         -webkit-transition: all 400ms;
         transition: all 400ms;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+
+        &:nth-child(2) {
+          top: 10px;
+        }
+
+        &:nth-child(3) {
+          top: 20px;
+        }
+      }
+
+      &.open span {
+        background: #fff;
+        width: 24px;
+      }
+    }
+
+    .contents section {
+      p {
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        line-height: 1.4;
+        font-size: 20px;
+        color: #fff;
+      }
+
+      &:nth-child(odd) p {
+        left: 10%;
+      }
+
+      &:nth-child(even) p {
+        right: 10%;
       }
     }
   }
