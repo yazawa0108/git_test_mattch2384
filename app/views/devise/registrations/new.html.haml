@@ -21,7 +21,7 @@
     = f.label :password_confirmation, "パスワード（再度入力してください）"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  = link_to "会員規約", static_pages_membership_agreement_path
+  = link_to "会員規約", static_pages_membership_agreement_path, target: :_blank
   を確認する
   .actions
     = f.submit "会員規約を承諾して登録する"
