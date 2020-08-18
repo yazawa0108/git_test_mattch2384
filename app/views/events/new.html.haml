@@ -8,36 +8,47 @@
         %li
           = f.label "案件名", class: "label_class"
           = f.text_field :name, class: "input_class"
+
         %li
           = f.label "案件開始日", class: "label_class"
           = f.date_field :start_day, class: "input_class"
+
         %li
           = f.label "案件終了日", class: "label_class"
           = f.date_field :end_day, class: "input_class"
+
         %li
           = f.label "想定集合時間", class: "label_class"
           = f.time_select :work_start_time, minute_step: 15, class: "input_class"
+
         %li
           = f.label "想定解散時間", class: "label_class"
           = f.time_select :work_end_time, minute_step: 15, class: "input_class"
+
         %li
           = f.label "会場名", class: "label_class"
           = f.text_field :place_name, class: "input_class"
+
         %li
           = f.label "開催場所", class: "label_class"
           = f.collection_select :prefecture_id, @prefectures, :id, :prefecture_name, { prompt: "開催場所を選択" }, { class: "input_class" }
+
         %li
           = f.label "会場住所", class: "label_class"
           = f.text_field :address, class: "input_class"
-        -# %li
-        -#   = f.label "募集ポジション", class: "label_class"
-        -#   = f.collection_select (:position_id, @positions, :id, :name, {prompt: "ポジションを選択"}), class: "input_class"
+
+        %li
+          = f.label "募集ポジション", class: "label_class"
+          = f.collection_select :position_id, @positions, :id, :name, {prompt: "ポジションを選択"}, { class: "input_class" }
+
         %li
           = f.label "募集人数", class: "label_class"
           = f.number_field :assign_num, class: "input_class", placeholder: "半角数字で入力"
+
         %li
           = f.label "日給", class: "label_class"
           = f.number_field :daily_wage, class: "input_class", placeholder: "半角数字で入力"
+
         %li.detail
           = f.label "その他案件詳細"
           = f.text_area :detail, rows: 10, class: "others__input", placeholder: "上記以外に必要な情報など。 \n例）交通費/食事の支給の有無、服装、持ち物、注意事項などご記入ください。"
