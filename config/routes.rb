@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "events#index"
   devise_for :users
-  root "static_pages#top_page"
+  resources :users, only: [:index, :show]
+  resources :events, only: [:index]
 end
