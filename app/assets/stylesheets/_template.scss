@@ -1,12 +1,13 @@
 header {
-  background-color: #8faec4;
+  background-color: none;
   height: 80px;
   padding: 0 20px;
+  background-color: rgb(230, 255, 255);
 
   .header__title {
     h2 {
-      font-size: 50px;
-      color: #c74949;
+      font-size: 2em;
+      color: #333333;
       margin: 0 auto;
       line-height: 80px;
     }
@@ -100,15 +101,28 @@ header {
 main {
   text-align: center;
   h3 {
-    width: 55%;
-    margin: 20px auto 10px;
-    background-color: orange;
-    border-radius: 6px;
-    padding: 3px 0;
+    width: 220px;
+    margin: 1em auto 0.5em;
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    line-height: 1.2;
+    color: #ff6a6a;
+    border-top: dotted 1px gray;
+    border-bottom: dotted 1px gray;
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f138";
+      font-weight: 900;
+      position: absolute;
+      font-size: 1em;
+      left: 1.5em;
+      top: 0.5em;
+      color: #ff6a6a;
+    }
   }
   .events__list {
+    background: rgb(255, 251, 214);
     padding: 12px 15px;
-    // background-color: yellowgreen;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -166,10 +180,10 @@ main {
 
 footer {
   text-align: center;
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(180, 180, 180);
   height: 35px;
   line-height: 35px;
-  color: rgb(58, 58, 58);
+  color: #fff;
   font-size: 11px;
   p {
     margin: 0 auto;
