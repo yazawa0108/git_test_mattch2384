@@ -1,23 +1,18 @@
 .events__list
   %ul
-    %li.event__index-card.index-card
-      %a.event-detail-link{ href: "#"}
-      %h5.event__title
-        イベントタイトルがここに入る
-      %table
-        %colgroup
-          %col{ span: "1", class: "header"}
-          %col{ span: "1", class: "content"}
-        %colgroup
-          %col{ span: "1", class: "header"}
-          %col{ span: "1", class: "content"}
-        %tr
-          %th.header 勤務地
-          %th.content 東京都
-          %th.header ポジション
-          %th.content 運営ディレクター
-        %tr
-          %th.header 日程
-          %th.content 2020年10月11日
-          %th.header 日給
-          %th.content 25,000円
+    - @events.each do |event|
+      .event__index-card.index-card
+        %li
+          %a.event-detail-link{ href: "#"}
+          %h5.event__title= event.name
+          %table
+            %tr
+              %th.header 勤務地
+              %td.content= event.prefecture.prefecture_name
+              %th.header ポジション
+              %td.content= event.position.name
+            %tr
+              %th.header 日程
+              %td.content= event.start_day
+              %th.header 日給
+              %td.content= event.daily_wage

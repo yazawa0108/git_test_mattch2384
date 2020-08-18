@@ -164,25 +164,20 @@ main {
     }
     h5 {
       margin: 0 auto;
-      padding: 8px 0;
+      padding: 8px 0 8px 1em;
       background-color: #f1d0aa;
     }
     table {
-      colgroup {
-        .header {
-          background-color: #f0efef;
-          width: 18%;
-        }
-        .content {
-          width: 25%;
-        }
-      }
       tr {
         line-height: 2;
-        th.header {
+        th {
+          width: 18%;
           font-size: 0.7em;
+          background-color: #f0efef;
+          text-align: center;
         }
-        th.content {
+        td {
+          width: 25%;
           font-size: 0.5em;
         }
       }

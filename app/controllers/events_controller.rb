@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @events = Event.all.order(id: "DESC")
   end
 
   def new
