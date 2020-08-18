@@ -23,15 +23,15 @@
         %li
           = f.label "会場名", class: "label_class"
           = f.text_field :place_name, class: "input_class"
-        -# %li
-        -#   = f.label "開催場所", class: "label_class"
-        -#   = f.collection_select (:prefecture_id, @prefectures, :id, :name,{prompt: "開催場所を選択"}), class: "input_class"
+        %li
+          = f.label "開催場所", class: "label_class"
+          = f.collection_select :prefecture_id, @prefectures, :id, :prefecture_name, { prompt: "開催場所を選択" }, { class: "input_class" }
         %li
           = f.label "会場住所", class: "label_class"
           = f.text_field :address, class: "input_class"
         -# %li
-          -# = f.label "募集ポジション", class: "label_class"
-          -# = f.collection_select (:position_id, @positions, :id, :name, {prompt: "ポジションを選択"}), class: "input_class"
+        -#   = f.label "募集ポジション", class: "label_class"
+        -#   = f.collection_select (:position_id, @positions, :id, :name, {prompt: "ポジションを選択"}), class: "input_class"
         %li
           = f.label "募集人数", class: "label_class"
           = f.number_field :assign_num, class: "input_class", placeholder: "半角数字で入力"

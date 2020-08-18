@@ -225,7 +225,7 @@ main {
       display: flex;
       .user-image {
         width: 40%;
-        margin: auto;
+        margin: auto 0 auto 1em;
         img {
           vertical-align: middle;
           border-radius: 50%;
@@ -270,7 +270,6 @@ main {
           width: 40%;
         }
         .input_class {
-          // width: 60%;
           width: 12em;
           margin-right: 1em;
         }
