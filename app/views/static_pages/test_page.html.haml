@@ -1,0 +1,7 @@
+h1 test_page
+- if user_signed_in?
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
+- else
+  = link_to "Sign_in", new_user_session_path
+  %br
+  = link_to "Sign_up", new_user_registration_path
