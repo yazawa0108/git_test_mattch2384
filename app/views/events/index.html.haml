@@ -1,13 +1,4 @@
-%header
-  .header__title
-    %h2 Match 2384!!
-  = render 'layouts/hamburger'
+- provide(:page_title, '募集中の案件一覧')
 
-
-%main
-  %h3 募集中の案件一覧
-  - 8.times do
-    = render 'layouts/event_index_card'
-
-
-= render 'layouts/footer'
+- 8.times do
+  = render 'layouts/event_index_card'

@@ -1,0 +1,45 @@
+- provide(:page_title, '案件の登録')
+
+.event__form-box
+  %ul
+    .form
+      = form_with model: @event, local: true do |f|
+
+        %li
+          = f.label "案件名"
+          = f.text_field :name
+        %li
+          = f.label "案件開始日"
+          = f.date_select :start_day
+        %li
+          = f.label "案件終了日"
+          = f.date_select :end_day
+        %li
+          = f.label "想定集合時間"
+          = f.datetime_field :work_start_time
+        %li
+          = f.label "想定解散時間"
+          = f.datetime_field :work_end_time
+        %li
+          = f.label "会場名"
+          = f.text_field :place_name
+        -# %li
+        -#   = f.label "開催場所"
+        -#   = f.collection_select (:prefecture_id, @prefectures, :id, :name,{prompt: "開催場所を選択"})
+        %li
+          = f.label "開催場所住所"
+          = f.text_field :address
+        -# %li
+          -# = f.label "募集ポジション"
+          -# = f.collection_select (:position_id, @positions, :id, :name, {prompt: "ポジションを選択"})
+        %li
+          = f.label "募集人数"
+          = f.number_field :assign_num
+        %li
+          = f.label "日給"
+          = f.number_field :daily_wage
+        %li
+          = f.label "その他案件詳細"
+          = f.text_area :detail
+        %li
+          = f.submit
