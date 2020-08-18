@@ -6,7 +6,4 @@ class StaticPagesController < ApplicationController
   def membership_agreement
   end
 
-  def test_page
-  end
-
 end
