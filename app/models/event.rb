@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-  belongs_to :prefecture
-  belongs_to :position
-  belongs_to :event_status
+  belongs_to :prefecture, optional: true
+  belongs_to :position, optional: true
+  belongs_to :event_status, optional: true
 
   validates :name, presence: true
   validates :start_day, presence: true

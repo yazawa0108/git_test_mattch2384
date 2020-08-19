@@ -1,3 +1,17 @@
+// error_messages
+
+.error_explanation {
+  h3 {
+    font-size: 0.7em;
+    color: rgb(255, 78, 78);
+  }
+  li.error {
+    font-size: 0.5em;
+    margin: 0.5em auto;
+    text-align: center;
+  }
+}
+
 // header
 
 header {
@@ -109,7 +123,7 @@ main {
 
   // page_title
 
-  h3 {
+  h3.page_title {
     width: 220px;
     margin: 1em auto;
     position: relative;
@@ -255,18 +269,29 @@ main {
   ul {
     padding: 0 0 2em 0;
     margin-bottom: 0;
+    margin-top: 0;
     .form {
-      li {
+      li.form {
+        flex-wrap: wrap;
         margin: 2em auto;
         list-style: none;
         display: flex;
         text-align: center;
+        position: relative;
         .label_class {
           width: 40%;
         }
         .input_class {
           width: 12em;
           margin-right: 1em;
+        }
+        .must {
+          color: red;
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.7em;
+          margin: 0.3em auto 0;
         }
       }
       .detail {

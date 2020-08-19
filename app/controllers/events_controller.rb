@@ -7,8 +7,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @prefectures = Prefecture.all
-    @positions = Position.all
   end
 
   def create
