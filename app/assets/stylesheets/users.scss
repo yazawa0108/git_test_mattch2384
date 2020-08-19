@@ -1,3 +1,106 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user__form-box {
+  font-size: 2em;
+  ul {
+    padding:0 0 2em 0;
+    .form {
+      margin: 0, 2.5em;
+      background-color: red;
+      li.form__image {
+        display: block;
+        width: 10em;
+        height: 10em;
+        margin: 0 auto;
+        .user_image {
+          width: 10em;
+          height: 10em;
+          border-radius: 50%;
+        }
+        .Hidden {
+          display: none;
+        }
+      }
+      li.form__name {
+        padding: 1.5em 0  0 1.5em ;
+        display: flex;
+        .form__name__last_name {
+          display: flex;
+          flex-direction: column;
+          .input_label {
+            width: 7em;
+          }
+          .input_name {
+            width: 7em;
+          }
+        }
+        .form__name__first_name {
+          padding-left: 1em;
+          display: flex;
+          flex-direction: column;
+          .input_label {
+            width: 7em;
+          }
+          .input_name {
+            width: 7em;
+          }
+        }
+      }
+      li.form__birthday {
+        padding: 1.5em 0  0 1.5em ;
+        .input_birthday_label {
+          display: block;
+        }
+      }
+      li.form--achievement {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .input_achievement {
+          width: 27em;
+        }
+      }
+      li.form--flex {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em 0  0 1.5em ;
+        .input_gender {
+          width: 4em;
+          height: 2em;
+        }
+        .input_mail_password {
+          width: 15em;
+        }
+      }
+      li {
+        list-style: none;
+        .input_label {
+        }
+      }
+    }
+  }
+}
+
+label.input_label {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+input.field_font {
+  font-size: 1.5em;
+}
+
+select.field_font {
+  font-size: 1.5em;
+}
+
+select#user_birthday_1i {
+  font-size: 1.5em;
+}
+
+select#user_birthday_2i {
+  font-size: 1.5em;
+}
+
+select#user_birthday_3i {
+  font-size: 1.5em;
+}
