@@ -38,6 +38,10 @@ ja:
         achievement: 実績
         profile_image: プロフィール写真
         betray_flg: 退会フラッグ
+  will_paginate:
+    previous_label: 前
+    next_label: 次
+    page_gap: …
   date:
     abbr_day_names:
       - 日

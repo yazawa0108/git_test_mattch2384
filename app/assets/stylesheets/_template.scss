@@ -44,7 +44,7 @@ header {
       box-sizing: border-box;
       z-index: 2;
 
-      ul li {
+      ul li.menu {
         display: block;
         padding: 20px 28px;
 
@@ -196,6 +196,16 @@ main {
         }
       }
     }
+  }
+}
+// Pagination
+.pagination {
+  background-color: rgb(255, 251, 214);
+  padding-bottom: 1em;
+  span,
+  a,
+  em {
+    padding-right: 1em;
   }
 }
 

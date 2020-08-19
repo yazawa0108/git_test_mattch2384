@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_instances, only: [:new, :create, :edit, :update]
 
   def index
-    @events = Event.all.order(id: "DESC")
+    @events = Event.paginate(page: params[:page], per_page: 10).order("id DESC")
   end
 
   def new

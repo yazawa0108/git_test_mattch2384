@@ -1,3 +1,4 @@
 - provide(:page_title, '募集中の案件一覧')
 
 = render 'layouts/event_index_card'
+= will_paginate(@events, :renderer => WillPaginate::ActionView::LinkRenderer)
