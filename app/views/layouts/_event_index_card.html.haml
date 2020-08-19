@@ -13,6 +13,13 @@
               %td.content= event.position.name
             %tr
               %th.header 日程
-              %td.content= event.start_day
+              %td.content
+                = event.start_day
+                - if event.end_day.present?
+                  %P.no-margin= "〜#{event.end_day}"
               %th.header 日給
-              %td.content= event.daily_wage
+              %td.content
+                - if event.daily_wage.present?
+                  = event.daily_wage
+                - else
+                  = "未定"
