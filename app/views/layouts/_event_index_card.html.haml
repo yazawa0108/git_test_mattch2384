@@ -20,6 +20,6 @@
               %th.header 日給
               %td.content
                 - if event.daily_wage.present?
-                  = event.daily_wage
+                  = "#{event.daily_wage.to_s(:delimited)}円"
                 - else
                   = "未定"

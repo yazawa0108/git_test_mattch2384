@@ -12,8 +12,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:notice] = "案件が投稿されました。"
       redirect_to events_path
+      flash[:notice] = "案件が投稿されました。"
     else
       render 'events/new'
     end
