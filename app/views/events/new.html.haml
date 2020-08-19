@@ -4,6 +4,7 @@
   %ul
     .form
       = form_with model: @event, local: true do |f|
+        = render 'shared/error_messages'
 
         %li
           = f.label "案件名", class: "label_class"
