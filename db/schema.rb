@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_090614) do
+ActiveRecord::Schema.define(version: 2020_08_19_014939) do
 
   create_table "applicants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "applicant_user_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_090614) do
     t.string "address"
     t.integer "daily_wage"
     t.text "detail"
-    t.bigint "event_status_id"
+    t.bigint "event_status_id", default: 1
     t.bigint "position_id"
     t.integer "assign_num", null: false
     t.string "place_name"
