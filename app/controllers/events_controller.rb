@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :start_day, :end_day, :work_start_time, :work_end_time, :prefecture_id, :address, :daily_wage, :detail, :position_id, :assign_num, :place_name)
+    params.require(:event).permit(:name, :start_day, :end_day, "work_start_time(4i)", "work_start_time(5i)", "work_end_time(4i)", "work_end_time(5i)", :prefecture_id, :address, :daily_wage, :detail, :position_id, :assign_num, :place_name)
   end
 
   def set_instances
