@@ -77,6 +77,14 @@
           margin-block-start: 0.2em;
         }
       }
+      li.form--flex.form--current_password {
+        padding: 0em;
+        margin: 3em 0 0 0;
+        align-items: center;
+        .input_label {
+          color: red;
+        }
+      }
       li {
         list-style: none;
         .form__btn {
@@ -87,7 +95,7 @@
           height: 3em;
           font-size: 1.5em;
           border-radius: 1%;
-          margin: 2em auto 0.3em auto;
+          margin: 0.5em auto 0.3em auto;
           display: block;
           margin-bottom: 2em;
         }

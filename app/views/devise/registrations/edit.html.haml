@@ -1,7 +1,10 @@
+- provide(:page_title, 'プロフィールの編集')
+
 .user__form-box
   %ul
     .form
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = render "devise/shared/error_messages", resource: resource
         %li.form__image
           = f.label :profile_image do
             = image_tag 'test.jpeg', alt: "プロフィール画像", class: "user_image" 
@@ -37,12 +40,12 @@
           = f.label :password_confirmation, "新しいパスワード（再度入力してください）", class: "input_label"
           = f.password_field :password_confirmation, autocomplete: "new-password", class: "input_mail_password  field_font"
           %p.explain_password ※変更しない場合は空白
-        %li.form--flex
-          = f.label :current_password, "情報を更新するには現在のパスワードを入力して下さい", class: "input_label"
+        %li.form--flex.form--current_password
+          = f.label :current_password, "更新するには現在のパスワードを入力して下さい", class: "input_label"
           = f.password_field :current_password, autocomplete: "current-password", class: "input_mail_password  field_font"
         %li
           = f.submit "会員情報を更新する", class: "form__btn"
+
   .btn__destroy
     %p.explain_destroy ユーザー登録を解除する方はボタンをクリックしてください。
     = button_to "退会する", user_registration_path, data: { confirm: "本当に退会しますか?" }, method: :delete, class: "form__btn--red"
-
