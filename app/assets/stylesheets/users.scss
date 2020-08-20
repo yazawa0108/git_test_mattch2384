@@ -1,3 +1,155 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user__form-box {
+  font-size: 2em;
+  ul {
+    padding-inline-start: 0em;
+    margin-block-end: 0em;
+    .form {
+      margin: 0, 2.5em;
+      li.form__image {
+        display: block;
+        width: 10em;
+        height: 10em;
+        margin: 0 auto;
+        .user_image {
+          width: 10em;
+          height: 10em;
+          border-radius: 0.1em;
+        }
+        .Hidden {
+          display: none;
+        }
+      }
+      li.form__name {
+        padding: 1.5em 0  0 1.5em ;
+        display: flex;
+        .form__name__last_name {
+          display: flex;
+          flex-direction: column;
+          .input_label {
+            width: 7em;
+          }
+          .input_name {
+            width: 7em;
+            height: 2em;
+          }
+        }
+        .form__name__first_name {
+          padding-left: 1em;
+          display: flex;
+          flex-direction: column;
+          .input_label {
+            width: 7em;
+          }
+          .input_name {
+            width: 7em;
+            height: 2em;
+          }
+        }
+      }
+      li.form__birthday {
+        padding: 1.5em 0  0 1.5em ;
+        .input_birthday_label {
+          display: block;
+        }
+      }
+      li.form--achievement {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .input_achievement {
+          width: 27em;
+        }
+      }
+      li.form--flex {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em 0  0 1.5em ;
+        .input_gender {
+          width: 7em;
+          height: 2em;
+        }
+        .input_mail_password {
+          width: 15em;
+          height: 2em;
+        }
+        p.explain_password {
+          margin-block-start: 0.2em;
+        }
+      }
+      li.form--flex.form--current_password {
+        padding: 0em;
+        margin: 3em 0 0 0;
+        align-items: center;
+        .input_label {
+          color: red;
+        }
+      }
+      li {
+        list-style: none;
+        .form__btn {
+          border: none;
+          background-color: lightskyblue;
+          color: dimgray;
+          width: 10em;
+          height: 3em;
+          font-size: 1.5em;
+          border-radius: 1%;
+          margin: 0.5em auto 0.3em auto;
+          display: block;
+          margin-bottom: 2em;
+        }
+      }
+    }
+  }
+  label.input_label {
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+  }
+  input.field_font {
+    font-size: 1.2em;
+  }
+  
+  select.field_font {
+    font-size: 1.2em;
+  }
+  
+  select#user_birthday_1i {
+    font-size: 1.2em;
+    height: 2em;
+  }
+  
+  select#user_birthday_2i {
+    font-size: 1.2em;
+    height: 2em;
+  }
+  
+  select#user_birthday_3i {
+    font-size: 1.2em;
+    height: 2em;
+  }
+  .btn__destroy {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p.explain_destroy {
+      margin-block-start: 0em;
+      font-size: 1.0em;
+      padding-top: 1.0em;
+      border-top: 0.1em dashed;
+      width: 28em;
+      border-color: dimgray;
+    }
+    .form__btn--red {
+      border: none;
+      background-color: firebrick;
+      color: floralwhite;
+      width: 10em;
+      height: 3em;
+      font-size: 1.5em;
+      border-radius: 0.1em;
+      margin: 1em 0 0 0;
+      display: block;
+    }
+  }
+}
