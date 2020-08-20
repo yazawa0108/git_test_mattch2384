@@ -39,7 +39,7 @@ header {
       width: 220px;
       height: 100%;
       padding-top: 50px;
-      background: #333;
+      background-color: #333;
       font-size: 16px;
       box-sizing: border-box;
       z-index: 2;
@@ -148,7 +148,7 @@ main {
 // event#index
 
 .events__list {
-  background: rgb(255, 251, 214);
+  background-color: rgb(255, 251, 214);
   padding: 12px 15px;
   display: flex;
   align-items: center;
@@ -216,7 +216,7 @@ main {
 // user#index
 
 .users__list {
-  background: rgb(255, 251, 214);
+  background-color: rgb(255, 251, 214);
   padding: 12px 15px;
   display: flex;
   align-items: center;
@@ -278,7 +278,7 @@ main {
 // event#new
 
 .event__form-box {
-  background: rgb(255, 251, 214);
+  background-color: rgb(255, 251, 214);
   padding-top: 1em;
   ul {
     padding: 0 0 2em 0;
@@ -324,6 +324,35 @@ main {
   }
 }
 
+// event/show
+.event__show {
+  background-color: rgb(255, 251, 214);
+  .owner__info {
+    h3 {
+      margin: 0;
+      padding-top: 1em;
+    }
+  }
+  .event__info {
+    padding: 0 1em 1em;
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      tr {
+        line-height: 2em;
+        border: 1px solid gray;
+        th {
+          background-color: #f0efef;
+          width: 8em;
+        }
+        td {
+          background-color: #fff;
+          width: 14em;
+        }
+      }
+    }
+  }
+}
 // footer
 
 footer {

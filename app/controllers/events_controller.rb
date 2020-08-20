@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_instances, only: [:new, :create, :edit, :update]
+  before_action :set_instances, only: [:show, :new, :create, :edit, :update]
 
   def index
     @events = Event.paginate(page: params[:page], per_page: 10).order("id DESC")

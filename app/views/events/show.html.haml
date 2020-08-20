@@ -1,1 +1,62 @@
 - provide(:page_title, '案件の詳細')
+
+.event__show
+  .owner__info
+    %h3 発注者
+    = render 'layouts/user_index_card'
+
+  .event__info
+    %table
+      %tr
+        %th イベント名
+        %td= @event.name
+      %tr
+        %th 会場名
+        %td
+          - if @event.place_name.present?
+            = @event.place_name
+          - else
+            = "---"
+      %tr
+        %th 都道府県
+        %td= @event.prefecture.prefecture_name
+      %tr
+        %th 会場住所
+        %td
+          - if @event.address.present?
+            = @event.address
+          - else
+            = "---"
+      %tr
+        %th 日程
+        %td
+          = @event.start_day
+          - if @event.end_day.present?
+            %br
+            = "〜#{@event.end_day}"
+      %tr
+        %th 拘束時間
+        %td
+          = @event.work_start_time.strftime('%H:%M') if @event.work_start_time.present?
+          - if @event.work_end_time.present?
+            = " 〜 #{@event.work_end_time.strftime('%H:%M')}"
+      %tr
+        %th 日給
+        %td
+          - if @event.daily_wage.present?
+            = @event.daily_wage
+          - else
+            = "---"
+      %tr
+        %th 募集人数
+        %td= "#{@event.assign_num}名"
+      %tr
+        %th ステータス
+        %td= @event.event_status.name
+      %tr
+        %th 詳細
+        %td
+          - if @event.detail.present?
+            = @event.detail
+          - else
+            = "---"
