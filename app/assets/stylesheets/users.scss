@@ -2,7 +2,8 @@
 .user__form-box {
   font-size: 2em;
   ul {
-    padding:0 0 2em 0;
+    padding-inline-start: 0em;
+    margin-block-end: 0em;
     .form {
       margin: 0, 2.5em;
       li.form__image {
@@ -13,7 +14,7 @@
         .user_image {
           width: 10em;
           height: 10em;
-          border-radius: 50%;
+          border-radius: 0.1em;
         }
         .Hidden {
           display: none;
@@ -65,12 +66,15 @@
         flex-direction: column;
         padding: 1.5em 0  0 1.5em ;
         .input_gender {
-          width: 4em;
+          width: 7em;
           height: 2em;
         }
         .input_mail_password {
           width: 15em;
           height: 2em;
+        }
+        p.explain_password {
+          margin-block-start: 0.2em;
         }
       }
       li {
@@ -83,8 +87,9 @@
           height: 3em;
           font-size: 1.5em;
           border-radius: 1%;
-          margin: 2em auto;
+          margin: 2em auto 0.3em auto;
           display: block;
+          margin-bottom: 2em;
         }
       }
     }
@@ -94,37 +99,38 @@
     font-size: 1.2em;
   }
   input.field_font {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   
   select.field_font {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   
   select#user_birthday_1i {
-    font-size: 1.5em;
+    font-size: 1.2em;
     height: 2em;
   }
   
   select#user_birthday_2i {
-    font-size: 1.5em;
+    font-size: 1.2em;
     height: 2em;
   }
   
   select#user_birthday_3i {
-    font-size: 1.5em;
+    font-size: 1.2em;
     height: 2em;
   }
   .btn__destroy {
     display: flex;
     align-items: center;
     flex-direction: column;
-    h3.line {
-      margin: 2em auto 1em auto;
-      display: block;
-    }
-    h3.explain_destroy {
-
+    p.explain_destroy {
+      margin-block-start: 0em;
+      font-size: 1.0em;
+      padding-top: 1.0em;
+      border-top: 0.1em dashed;
+      width: 28em;
+      border-color: dimgray;
     }
     .form__btn--red {
       border: none;
@@ -133,8 +139,8 @@
       width: 10em;
       height: 3em;
       font-size: 1.5em;
-      border-radius: 1%;
-      margin: 2em auto;
+      border-radius: 0.1em;
+      margin: 1em 0 0 0;
       display: block;
     }
   }
