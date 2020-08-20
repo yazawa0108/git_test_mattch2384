@@ -1,9 +1,19 @@
 - provide(:page_title, '案件の詳細')
 
 .event__show
+
+  -# 下記発注者は非表示
   .owner__info
     %h3 発注者
     = render 'layouts/user_index_card'
+
+  -# 下記発注者のみ表示
+  -# .applicant__list
+  -#   %ul
+  -#     - @event.applicant.each do |applicant|
+  -#       %li
+  -#         = render 'layouts/user_index_card'
+
 
   .event__info
     %table
@@ -50,6 +60,9 @@
       %tr
         %th 募集人数
         %td= "#{@event.assign_num}名"
+      %tr
+        %th エントリー人数
+        %td 4人（仮）
       %tr
         %th ステータス
         %td= @event.event_status.name
