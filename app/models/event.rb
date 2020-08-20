@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :prefecture, optional: true
   belongs_to :position, optional: true
   belongs_to :event_status, optional: true
-  has_many :applicants, through: :users
+  has_many :users, through: :applicants
   has_one :user
 
 
