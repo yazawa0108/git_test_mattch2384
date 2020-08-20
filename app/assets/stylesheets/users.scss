@@ -5,7 +5,6 @@
     padding:0 0 2em 0;
     .form {
       margin: 0, 2.5em;
-      background-color: red;
       li.form__image {
         display: block;
         width: 10em;
@@ -31,6 +30,7 @@
           }
           .input_name {
             width: 7em;
+            height: 2em;
           }
         }
         .form__name__first_name {
@@ -42,6 +42,7 @@
           }
           .input_name {
             width: 7em;
+            height: 2em;
           }
         }
       }
@@ -69,38 +70,72 @@
         }
         .input_mail_password {
           width: 15em;
+          height: 2em;
         }
       }
       li {
         list-style: none;
-        .input_label {
+        .form__btn {
+          border: none;
+          background-color: lightskyblue;
+          color: dimgray;
+          width: 10em;
+          height: 3em;
+          font-size: 1.5em;
+          border-radius: 1%;
+          margin: 2em auto;
+          display: block;
         }
       }
     }
   }
-}
+  label.input_label {
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+  }
+  input.field_font {
+    font-size: 1.5em;
+  }
+  
+  select.field_font {
+    font-size: 1.5em;
+  }
+  
+  select#user_birthday_1i {
+    font-size: 1.5em;
+    height: 2em;
+  }
+  
+  select#user_birthday_2i {
+    font-size: 1.5em;
+    height: 2em;
+  }
+  
+  select#user_birthday_3i {
+    font-size: 1.5em;
+    height: 2em;
+  }
+  .btn__destroy {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h3.line {
+      margin: 2em auto 1em auto;
+      display: block;
+    }
+    h3.explain_destroy {
 
-label.input_label {
-  margin-bottom: 0.5em;
-  font-size: 1.2em;
-}
-
-input.field_font {
-  font-size: 1.5em;
-}
-
-select.field_font {
-  font-size: 1.5em;
-}
-
-select#user_birthday_1i {
-  font-size: 1.5em;
-}
-
-select#user_birthday_2i {
-  font-size: 1.5em;
-}
-
-select#user_birthday_3i {
-  font-size: 1.5em;
+    }
+    .form__btn--red {
+      border: none;
+      background-color: firebrick;
+      color: floralwhite;
+      width: 10em;
+      height: 3em;
+      font-size: 1.5em;
+      border-radius: 1%;
+      margin: 2em auto;
+      display: block;
+    }
+  }
 }
