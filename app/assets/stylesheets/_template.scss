@@ -320,6 +320,14 @@ main {
       .submit__btn {
         text-align: center;
       }
+      // event/edet
+      .status__change {
+        margin: 1em;
+        input {
+          background-color: rgb(231, 171, 59);
+          color: rgb(0, 0, 0);
+        }
+      }
     }
   }
 }
@@ -368,6 +376,7 @@ main {
     }
   }
 }
+
 // footer
 
 footer {
