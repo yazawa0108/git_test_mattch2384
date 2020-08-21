@@ -55,10 +55,10 @@
       %tr
         %th 日程
         %td
-          = @event.start_day
+          = @event.start_day.strftime('%Y年%-m月%-d日')
           - if @event.end_day.present?
             %br
-            = "〜#{@event.end_day}"
+            = "〜#{@event.end_day.strftime('%Y年%-m月%-d日')}"
       %tr
         %th 拘束時間
         %td

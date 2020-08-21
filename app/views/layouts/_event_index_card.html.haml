@@ -14,9 +14,9 @@
             %tr
               %th.header 日程
               %td.content
-                = event.start_day
+                = event.start_day.strftime('%Y年%-m月%-d日')
                 - if event.end_day.present?
-                  %P.no-margin= "〜#{event.end_day}"
+                  %P.no-margin= "〜#{event.end_day.strftime('%-m月%-d日')}"
               %th.header 日給
               %td.content
                 - if event.daily_wage.present?
