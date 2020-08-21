@@ -1,6 +1,4 @@
-
 .user__form-box {
-  font-size: 2em;
   ul {
     padding-inline-start: 0em;
     margin-block-end: 0em;
@@ -26,6 +24,7 @@
         .form__name__last_name {
           display: flex;
           flex-direction: column;
+          text-align: left;
           .input_label {
             width: 7em;
           }
@@ -38,6 +37,7 @@
           padding-left: 1em;
           display: flex;
           flex-direction: column;
+          text-align: left;
           .input_label {
             width: 7em;
           }
@@ -49,21 +49,24 @@
       }
       li.form__birthday {
         padding: 1.5em 0  0 1.5em ;
+        text-align: left;
         .input_birthday_label {
           display: block;
         }
       }
       li.form--achievement {
+        padding: 1.5em 0 0 0 ;
         display: flex;
         align-items: center;
         flex-direction: column;
         .input_achievement {
-          width: 27em;
+          width: 20em;
         }
       }
       li.form--flex {
         display: flex;
         flex-direction: column;
+        text-align: left;
         padding: 1.5em 0  0 1.5em ;
         .input_gender {
           width: 7em;
@@ -104,28 +107,23 @@
   }
   label.input_label {
     margin-bottom: 0.5em;
-    font-size: 1.2em;
   }
   input.field_font {
-    font-size: 1.2em;
+    font-size: 1.0em;
   }
   
   select.field_font {
-    font-size: 1.2em;
   }
   
   select#user_birthday_1i {
-    font-size: 1.2em;
     height: 2em;
   }
   
   select#user_birthday_2i {
-    font-size: 1.2em;
     height: 2em;
   }
   
   select#user_birthday_3i {
-    font-size: 1.2em;
     height: 2em;
   }
   .btn__destroy {
@@ -134,10 +132,9 @@
     flex-direction: column;
     p.explain_destroy {
       margin-block-start: 0em;
-      font-size: 1.0em;
       padding-top: 1.0em;
       border-top: 0.1em dashed;
-      width: 28em;
+      width: 18em;
       border-color: dimgray;
     }
     .form__btn--red {
@@ -148,7 +145,7 @@
       height: 3em;
       font-size: 1.5em;
       border-radius: 0.1em;
-      margin: 1em 0 0 0;
+      margin: 1em 0 1em 0;
       display: block;
     }
   }
