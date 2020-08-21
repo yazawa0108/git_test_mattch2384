@@ -8,7 +8,10 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @applicant = Applicant.new
+    @applicants = Applicant.where(event_id: @event.id)
+    if user_signed_in?
+      @applicant = Applicant.find_by(applicant_user_id: current_user.id)
+    end
   end
 
   def new
@@ -18,8 +21,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to events_path
-      flash[:notice] = "案件が投稿されました。"
+      redirect_to events_path, notice: "案件が投稿されました。"
     else
       render 'events/new'
     end

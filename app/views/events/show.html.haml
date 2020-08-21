@@ -62,7 +62,7 @@
         %td= "#{@event.assign_num}名"
       %tr
         %th エントリー人数
-        %td 4人（仮）
+        %td= "#{@applicants.count}名"
       %tr
         %th ステータス
         %td= @event.event_status.name
@@ -74,10 +74,16 @@
           - else
             = "---"
 
-  -# 発注者、エントリー済みユーザー、未ログイン者は非表示
-  .entry__btn
-    -# = button_to("案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id))
-    = form_with model: @applicant, local: true do |f|
-      = f.hidden_field :applicant_user_id, value: current_user.id
-      = f.hidden_field :event_id, value: @event.id
-      = f.submit name: nil
+  - if current_user == nil
+    .entry__btn
+      = button_to "案件にエントリー", new_user_session_path
+      -# エントリー済み = エントリー取り消し
+
+  - elsif @applicant.nil? && @event.owner_id != current_user.id
+    .entry__btn
+      = button_to "案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
+
+  - elsif @applicant.present?
+    .entry__btn
+      = button_to "エントリーの取消", applicant_path(@applicant), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
+      -# オーナー以外（その他） = 通常

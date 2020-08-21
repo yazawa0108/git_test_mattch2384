@@ -3,7 +3,7 @@
     - @events.each do |event|
       .event__index-card.index-card
         %li
-          %a.event-detail-link{ href: "#"}
+          %a.event-detail-link{ href: event_path(event)}
           %h5.event__title= event.name
           %table
             %tr
