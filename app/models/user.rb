@@ -10,4 +10,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :first_name, presence: true
 
+  # betray_flgカラムが、"0(現会員)" であるものを取得する
+  scope :active, -> { where(betray_flg: 0)}
+
 end
