@@ -9,4 +9,4 @@
       %li= link_to "仕事を依頼する", new_event_path
       %li= link_to "マイジョブ", events_path
       %li= link_to "プロフィール", "#"
-      %li= link_to "ログアウト", "#"
+      %li= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}
