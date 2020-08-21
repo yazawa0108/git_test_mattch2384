@@ -3,16 +3,21 @@
 .event__show
 
   -# 下記発注者は非表示
-  .owner__info
-    %h3 発注者
-    = render 'layouts/user_index_card'
+  - if @event.owner_id == current_user.id
+    .applicant__list
+      %h3 エントリーユーザー
+      %ul
+        - @applicants.each do |applicant|
+          %li
+            = render 'layouts/user_index_card'
+  - else
+    .owner__info
+      %h3 発注者
+      = render 'layouts/user_index_card'
 
   -# 下記発注者のみ表示
-  -# .applicant__list
-  -#   %ul
-  -#     - @event.applicant.each do |applicant|
-  -#       %li
-  -#         = render 'layouts/user_index_card'
+
+
 
 
   .event__info
@@ -81,9 +86,9 @@
 
   - elsif @applicant.nil? && @event.owner_id != current_user.id
     .entry__btn
-      = button_to "案件にエントリー", event_applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
+      = button_to "案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
 
   - elsif @applicant.present?
     .entry__btn
-      = button_to "エントリーの取消", event_applicant_path(@event, @applicant), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
+      = button_to "エントリーの取消", applicant_path(@applicant.id, event_id: @event.id), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
       -# オーナー以外（その他） = 通常
