@@ -26,6 +26,13 @@
   .event__info
     %table
       %tr
+        %th 作成日/更新日
+        %td
+          - if @event.updated_at.present?
+            = @event.updated_at.strftime('%Y年%-m月%-d日')
+          - else
+            = @event.created_at.strftime('%Y年%-m月%-d日')
+      %tr
         %th イベント名
         %td= @event.name
       %tr
