@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @owner = User.find(@event.owner_id)
     # そのイベントにエントリーしたユーザーを配列で代入
     @applicants = Applicant.where(event_id: @event.id)
     if user_signed_in?

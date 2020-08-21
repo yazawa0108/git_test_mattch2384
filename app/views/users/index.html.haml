@@ -1,4 +1,4 @@
 - provide(:page_title, '登録ユーザー')
 
-- 8.times do
-  = render 'layouts/user_index_card'
+- @users.each do |user|
+  = render partial: 'layouts/user_index_card', locals: { user: user }

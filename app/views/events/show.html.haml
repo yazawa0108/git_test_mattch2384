@@ -2,22 +2,23 @@
 
 .event__show
 
-  -# 下記発注者は非表示
+  -# 下記オーナーの場合のView
   - if @event.owner_id == current_user.id
     .applicant__list
       %h3 エントリーユーザー
-      %ul
-        - @applicants.each do |applicant|
-          %li
-            = render 'layouts/user_index_card'
+      - if @applicants.blank?
+        %p エントリーユーザーはまだいません。
+      - else
+        %ul
+          - @applicants.each do |applicant|
+            - user = User.find(applicant.applicant_user_id)
+            %li
+              = render partial: 'layouts/user_index_card', locals: { user: user }
+              -# 下記オーナー以外のView
   - else
     .owner__info
       %h3 発注者
-      = render 'layouts/user_index_card'
-
-  -# 下記発注者のみ表示
-
-
+      = render partial: 'layouts/user_index_card', locals: { user: @owner }
 
 
   .event__info
