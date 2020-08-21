@@ -10,4 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     user_path(resource)
   end
+
+  def destroy
+    resource.betray_flg = 1
+    resource.save
+    redirect_to root_path
+  end
 end
