@@ -46,7 +46,7 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
-    redirect_to events_path
+    redirect_to events_path, notice: "案件が削除されました。"
   end
 
 

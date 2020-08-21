@@ -1,5 +1,8 @@
 - provide(:page_title, '募集中の案件一覧')
 
+#notice-message
+  %p= flash[:notice]
+
 %p= "こんにちは #{current_user.last_name }さん" if user_signed_in?
 = render 'layouts/event_index_card'
 = will_paginate(@events, :renderer => WillPaginate::ActionView::LinkRenderer)
