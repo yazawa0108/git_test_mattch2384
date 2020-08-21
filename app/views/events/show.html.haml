@@ -1,7 +1,10 @@
 - provide(:page_title, '案件の詳細')
 
+%p= flash[:notice]
+
 .event__show
-  - if current_user == nil || @event.owner_id == current_user.id
+  -# 下記オーナー以外のview
+  - if current_user == nil || @event.owner_id != current_user.id
     .owner__info
       %h3 発注者
       = render partial: 'layouts/user_index_card', locals: { user: @owner }

@@ -2,12 +2,12 @@ class ApplicantsController < ApplicationController
 
   def create
     Applicant.create(applicant_params)
-    redirect_to event_path(params[:event_id])
+    redirect_to event_path(params[:event_id]), notice: "案件にエントリーしました。"
   end
 
   def destroy
     if Applicant.destroy(params[:id])
-      redirect_to event_path(params[:event_id])
+      redirect_to event_path(params[:event_id]), notice: "エントリーを取り消しました。"
     else
       render 'events/show'
     end
