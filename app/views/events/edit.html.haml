@@ -1,0 +1,74 @@
+- provide(:page_title, '案件の更新')
+
+.event__form-box
+  %ul
+    .form
+      = form_with model: @event, local: true do |f|
+        = render 'shared/error_messages'
+        %p ※赤文字は入力必須の項目です。
+
+        %li.form
+          = f.label "案件名", class: "label_class must"
+          = f.text_field :name, class: "input_class"
+
+        %li.form
+          = f.label "案件開始日", class: "label_class must"
+          = f.date_field :start_day, value: nil, class: "input_class"
+          %p ※1日の案件の場合は、開始日のみ指定してください。
+
+        %li.form
+          = f.label "案件終了日", class: "label_class"
+          = f.date_field :end_day, class: "input_class"
+
+        %li.form
+          = f.label "想定集合時間", class: "label_class"
+          = f.time_select :work_start_time, include_blank: true, ignore_data:true, start_hour: 6, end_hour: 23, minute_step: 15, class: "input_class"
+
+        %li.form
+          = f.label "想定解散時間", class: "label_class"
+          = f.time_select :work_end_time, include_blank: true, ignore_data:true, start_hour: 6, end_hour: 23, minute_step: 15, class: "input_class"
+
+        %li.form
+          = f.label "会場名", class: "label_class"
+          = f.text_field :place_name, class: "input_class"
+
+        %li.form
+          = f.label "開催場所", class: "label_class must"
+          = f.collection_select :prefecture_id, @prefectures, :id, :prefecture_name,{ include_blank: "開催場所を選択"}, { class: "input_class" }
+        %li.form
+          = f.label "会場住所", class: "label_class"
+          = f.text_field :address, class: "input_class"
+
+        %li.form
+          = f.label "募集ポジション", class: "label_class must"
+          = f.collection_select :position_id, @positions, :id, :name, {prompt: "ポジションを選択"}, { class: "input_class" }
+
+        %li.form
+          = f.label "募集人数", class: "label_class must"
+          = f.number_field :assign_num, class: "input_class", placeholder: "半角数字で入力"
+
+        %li.form
+          = f.label "日給", class: "label_class"
+          = f.number_field :daily_wage, class: "input_class", placeholder: "半角数字で入力"
+
+        %li.form.detail
+          = f.label "その他案件詳細"
+          = f.text_area :detail, rows: 10, class: "others__input", placeholder: "上記以外に必要な情報など。 \n例）交通費/食事の支給の有無、服装、持ち物、注意事項などご記入ください。"
+
+        .submit__btn
+          = f.submit "更新", class: "btn"
+
+      - if @applicants.blank?
+        = form_with model: @event, method: :delete, local: true do |f|
+          .status__change
+            = f.submit "案件を破棄する", data: { confirm: "まだエントリーが無いため、案件が完全に削除されます。よろしいですか？" }
+      - elsif @event.event_status_id == 2
+        = form_with model: @event, method: :patch, local: true do |f|
+          .status__change
+            = f.hidden_field :event_status_id, value: 1
+            = f.submit "募集再開する", data: { confirm: "案件の募集を再開します。" }
+      - else
+        = form_with model: @event, method: :patch, local: true do |f|
+          .status__change
+            = f.hidden_field :event_status_id, value: 2
+            = f.submit "募集終了する", data: { confirm: "案件の募集を終了します。よろしいですか？" }

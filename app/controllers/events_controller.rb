@@ -30,11 +30,30 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    @applicants = Applicant.where(event_id: @event.id)
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to event_path(@event.id), notice: "案件が更新されました。"
+    else
+      render 'events/edit'
+    end
+  end
+
+  def destroy
+    Event.find(params[:id]).destroy
+    redirect_to events_path
+  end
+
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :start_day, :end_day, "work_start_time(4i)", "work_start_time(5i)", "work_end_time(4i)", "work_end_time(5i)", :prefecture_id, :address, :daily_wage, :detail, :position_id, :assign_num, :place_name).merge(owner_id: current_user.id)
+    params.require(:event).permit(:name, :start_day, :end_day, "work_start_time(4i)", "work_start_time(5i)", "work_end_time(4i)", "work_end_time(5i)", :prefecture_id, :address, :daily_wage, :detail, :position_id, :assign_num, :place_name, :event_status_id).merge(owner_id: current_user.id)
   end
 
   def set_instances

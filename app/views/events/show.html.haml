@@ -98,7 +98,11 @@
     .entry__btn
       = button_to "案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
 
+      -# オーナー以外（その他） = 通常
   - elsif @applicant.present?
     .entry__btn
       = button_to "エントリーの取消", applicant_path(@applicant.id, event_id: @event.id), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
-      -# オーナー以外（その他） = 通常
+
+  - else
+    .entry__btn
+      = button_to "案件の編集", edit_event_path(@event.id), method: :get
