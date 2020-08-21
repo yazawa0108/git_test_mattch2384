@@ -327,11 +327,13 @@ main {
 // event/show
 .event__show {
   background-color: rgb(255, 251, 214);
-  .owner__info {
-    h3 {
-      margin: 0;
-      padding-top: 1em;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  h3 {
+    margin: 0;
+    padding-top: 1em;
   }
   .event__info {
     padding: 0 1em 1em;
