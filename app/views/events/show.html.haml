@@ -100,7 +100,7 @@
       = button_to "案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
 
       -# オーナー以外（その他） = 通常
-  - elsif @applicant.present?
+  - elsif @applicant.present? && @event.owner_id != current_user.id
     .entry__btn
       = button_to "エントリーの取消", applicant_path(@applicant.id, event_id: @event.id), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
 
