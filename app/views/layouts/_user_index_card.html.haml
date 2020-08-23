@@ -2,11 +2,14 @@
 
 .users__list
   %ul
-    %li.user__index-card.index-
+    %li.user__index-card
       = link_to "", user_path(user.id), class: "user-detail"
       .user__card
         .user-image
-          = image_tag 'profile.png', alt: 'profile image', height: '80px', width: '80px', class: 'index__profile-image'
+          - if user.profile_image?
+            = image_tag user.profile_image.index.url, alt: 'profile image', class: 'index__profile-image'
+          - else
+            = image_tag 'default.png', alt: 'profile image', class: 'index__profile-image'
         .user-info
           %p.name= "#{user.last_name} #{user.first_name}"
           %p.score

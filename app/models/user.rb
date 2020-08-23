@@ -13,4 +13,6 @@ class User < ApplicationRecord
   # betray_flgカラムが、"0(現会員)" であるものを取得する
   scope :active, -> { where(betray_flg: 0)}
 
+  # :profile_imageカラムに画像のURL格納
+  mount_uploader :profile_image, ImageUploader
 end

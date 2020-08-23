@@ -1,5 +1,12 @@
 - provide(:page_title, 'プロフィールの編集')
 
+-# 西川さん、よきタイミングで下記イメージアップローダーを適応させてくださいませ！
+-# - if @user.image?
+-#   = image_tag @user.profile_image.url
+-# - else
+-#   = image_tag "default.png", size: '100x100'
+
+
 .user__form-box
   %ul
     .form
@@ -7,8 +14,15 @@
         = render "devise/shared/error_messages", resource: resource
         %li.form__image
           = f.label :profile_image do
-            = image_tag 'test.jpeg', alt: "プロフィール画像", class: "user_image" 
-            = f.file_field :profile_image, class: "Hidden"
+            - if @user.profile_image?
+              = image_tag @user.profile_image.url, alt: "プロフィール画像", class: "user_image"
+            - else
+              = image_tag "default.png", size: '200x200', alt: "プロフィール画像", class: "user_image"
+            = f.file_field :profile_image, accept: 'profile_image/jpeg,profile_image/gif,profile_image/png', class: "Hidden"
+        -# %li.form__image
+        -#   = f.label :profile_image do
+        -#     = image_tag 'test.jpeg', alt: "プロフィール画像", class: "user_image"
+        -#     = f.file_field :profile_image, class: "Hidden"
         %li.form__name
           .form__name__last_name
             = f.label :last_name, "姓", class: "input_label"
@@ -25,7 +39,7 @@
         %li.form--achievement
           = f.label :achievement, "実績", class: "input_label"
           = f.text_area :achievement, placeholder: "例）東京ゲームショー2019 〇〇ブース 進行ディレクター \n例）東京モーターショー2019 〇〇ブース 運営ディレクター" , rows: "10", class: "input_achievement  field_font"
-          
+
         %li.form--flex
           = f.label :email, "メールアドレス", class: "input_label"
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_mail_password  field_font"
