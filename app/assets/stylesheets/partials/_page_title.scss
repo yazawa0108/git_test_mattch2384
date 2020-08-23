@@ -1,0 +1,26 @@
+main {
+  text-align: center;
+
+  // page_title
+
+  h3.page_title {
+    width: 220px;
+    margin: 1em auto;
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    line-height: 1.2;
+    color: #ff6a6a;
+    border-top: dotted 1px gray;
+    border-bottom: dotted 1px gray;
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f138";
+      font-weight: 900;
+      position: absolute;
+      font-size: 1em;
+      left: 1.5em;
+      top: 0.5em;
+      color: #ff6a6a;
+    }
+  }
+}

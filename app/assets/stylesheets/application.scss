@@ -1,5 +1,7 @@
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "reset";
-@import "template";
-@import "users"
+@import "partials/*";
+@import "pages/*";
+@import "modules/*";
+@import "users";

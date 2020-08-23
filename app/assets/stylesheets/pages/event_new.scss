@@ -1,0 +1,54 @@
+.event__form-box {
+  background-color: rgb(255, 251, 214);
+  padding-top: 1em;
+  ul {
+    padding: 0 0 2em 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    .form {
+      li.form {
+        flex-wrap: wrap;
+        margin: 2em auto;
+        list-style: none;
+        display: flex;
+        text-align: center;
+        position: relative;
+        .label_class {
+          width: 40%;
+        }
+        .input_class {
+          width: 12em;
+          margin-right: 1em;
+        }
+        .must {
+          color: red;
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.7em;
+          margin: 0.3em auto 0;
+        }
+      }
+      .detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .others__input {
+          width: 18em;
+          margin-top: 1em;
+        }
+      }
+      .submit__btn {
+        text-align: center;
+      }
+      // event/edit
+      .status__change {
+        margin: 1em;
+        input {
+          background-color: rgb(231, 171, 59);
+          color: rgb(0, 0, 0);
+        }
+      }
+    }
+  }
+}

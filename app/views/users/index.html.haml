@@ -1,4 +1,4 @@
 - provide(:page_title, '登録ユーザー')
 
 - @users.each do |user|
-  = render partial: 'layouts/user_index_card', locals: { user: user }
+  = render partial: 'shared/user_index_card', locals: { user: user }
