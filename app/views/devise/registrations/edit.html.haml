@@ -1,10 +1,10 @@
 - provide(:page_title, 'プロフィールの編集')
 
 -# 西川さん、よきタイミングで下記イメージアップローダーを適応させてくださいませ！
--# - if @user.image?
--#   = image_tag @user.profile_image.url
--# - else
--#   = image_tag "default.png", size: '100x100'
+-# %li.form__image
+-#   = f.label :profile_image do
+-#     = image_tag 'test.jpeg', alt: "プロフィール画像", class: "user_image"
+-#     = f.file_field :profile_image, class: "Hidden"
 
 
 .user__form-box
@@ -15,14 +15,14 @@
         %li.form__image
           = f.label :profile_image do
             - if @user.profile_image?
-              = image_tag @user.profile_image.url, alt: "プロフィール画像", class: "user_image"
+              = image_tag @user.profile_image.url, alt: "プロフィール画像", id: "img_prev"
             - else
-              = image_tag "default.png", size: '200x200', alt: "プロフィール画像", class: "user_image"
-            = f.file_field :profile_image, accept: 'profile_image/jpeg,profile_image/gif,profile_image/png', class: "Hidden"
-        -# %li.form__image
-        -#   = f.label :profile_image do
-        -#     = image_tag 'test.jpeg', alt: "プロフィール画像", class: "user_image"
-        -#     = f.file_field :profile_image, class: "Hidden"
+              = image_tag "default.png", alt: "プロフィール画像", id: "img_prev"
+            = f.file_field :profile_image, accept: 'profile_image/jpeg, profile_image/gif, profile_image/png', id: "user_img"
+            %p
+              = f.check_box :remove_profile_image
+              画像を削除する
+            = f.hidden_field :profile_image_cache
         %li.form__name
           .form__name__last_name
             = f.label :last_name, "姓", class: "input_label"

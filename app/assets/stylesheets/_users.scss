@@ -5,21 +5,21 @@
     .form {
       margin: 0, 2.5em;
       li.form__image {
-        display: block;
-        width: 10em;
-        height: 10em;
+        // display: block;
+        // width: 10em;
+        // height: 10em;
         margin: 0 auto;
-        .user_image {
-          width: 10em;
-          height: 10em;
+        text-align: center;
+        #img_prev {
+          width: 200px;
+          height: 200px;
           border-radius: 0.1em;
         }
-        .Hidden {
-          display: none;
+        #user_img {
         }
       }
       li.form__name {
-        padding: 1.5em 0  0 1.5em ;
+        padding: 1.5em 0 0 1.5em;
         display: flex;
         .form__name__last_name {
           display: flex;
@@ -48,14 +48,14 @@
         }
       }
       li.form__birthday {
-        padding: 1.5em 0  0 1.5em ;
+        padding: 1.5em 0 0 1.5em;
         text-align: left;
         .input_birthday_label {
           display: block;
         }
       }
       li.form--achievement {
-        padding: 1.5em 0 0 0 ;
+        padding: 1.5em 0 0 0;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -67,7 +67,7 @@
         display: flex;
         flex-direction: column;
         text-align: left;
-        padding: 1.5em 0  0 1.5em ;
+        padding: 1.5em 0 0 1.5em;
         .input_gender {
           width: 7em;
           height: 2em;
@@ -109,20 +109,20 @@
     margin-bottom: 0.5em;
   }
   input.field_font {
-    font-size: 1.0em;
+    font-size: 1em;
   }
-  
+
   select.field_font {
   }
-  
+
   select#user_birthday_1i {
     height: 2em;
   }
-  
+
   select#user_birthday_2i {
     height: 2em;
   }
-  
+
   select#user_birthday_3i {
     height: 2em;
   }
@@ -132,7 +132,7 @@
     flex-direction: column;
     p.explain_destroy {
       margin-block-start: 0em;
-      padding-top: 1.0em;
+      padding-top: 1em;
       border-top: 0.1em dashed;
       width: 18em;
       border-color: dimgray;
