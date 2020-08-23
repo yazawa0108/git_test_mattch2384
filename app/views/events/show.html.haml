@@ -66,11 +66,12 @@
           = @event.work_start_time.strftime('%H:%M') if @event.work_start_time.present?
           - if @event.work_end_time.present?
             = " 〜 #{@event.work_end_time.strftime('%H:%M')}"
+          = "---" if @work_start_time.nil? && @event.work_end_time.nil?
       %tr
         %th 日給
         %td
           - if @event.daily_wage.present?
-            = @event.daily_wage
+            = "#{@event.daily_wage.to_s(:delimited)}円"
           - else
             = "---"
       %tr

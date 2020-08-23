@@ -7,19 +7,23 @@
           %h5.event__title= event.name
           %table
             %tr
-              %th.header 勤務地
-              %td.content= event.prefecture.prefecture_name
-              %th.header ポジション
-              %td.content= event.position.name
-            %tr
-              %th.header 日程
-              %td.content
+              %th 日程
+              %td{colspan: 3}
                 = event.start_day.strftime('%Y年%-m月%-d日')
                 - if event.end_day.present?
-                  %P.no-margin= "〜#{event.end_day.strftime('%-m月%-d日')}"
+                  = "〜 #{event.end_day.strftime('%-m月%-d日')}"
+            %tr
+              %th.header 勤務地
+              %td.content= event.prefecture.prefecture_name
+              %th.header.small ポジション
+              %td.content= event.position.name
+            %tr
               %th.header 日給
               %td.content
                 - if event.daily_wage.present?
                   = "#{event.daily_wage.to_s(:delimited)}円"
                 - else
                   = "未定"
+              %th.header 募集
+              %td.content
+                = event.event_status.name
