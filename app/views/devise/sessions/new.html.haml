@@ -1,4 +1,5 @@
-%h2 ログインページ
+- provide(:page_title, 'ログインページ')
+
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :email, "メールアドレス"
