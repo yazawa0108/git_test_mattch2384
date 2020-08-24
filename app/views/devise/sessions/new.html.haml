@@ -1,17 +1,19 @@
-%h2 ログインページ
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email, "メールアドレス"
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password, "パスワード"
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "ログイン"
-= render "devise/shared/links"
+- provide(:page_title, 'ログインページ')
+
+.user__signin
+  = form_for(resource, as: resource_name, url: session_path(resource_name),html: {class: "user__form"}) do |f|
+    .user__form__info
+      = f.label :email, "メールアドレス", class: "label_class"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_class"
+    .user__form__info
+      = f.label :password, "パスワード", class: "label_class"
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: "input_class"
+    - if devise_mapping.rememberable?
+      .user__form__checkbox
+        = f.check_box :remember_me, class: "input_class"
+        = f.label :remember_me, "オートログインを有効にする", class: "label_class"
+    .user__form__btn
+      = f.submit "ログイン", class: "btn_sign_in"
+  = render "devise/shared/links"
