@@ -6,6 +6,11 @@ class EventsController < ApplicationController
     @user = current_user
   end
 
+  def search
+    @events = Event.paginate(page: params[:page], per_page: 10).order(params[:change])
+    render 'events/index'
+  end
+
   def show
     @event = Event.find(params[:id])
     @owner = User.find(@event.owner_id)
