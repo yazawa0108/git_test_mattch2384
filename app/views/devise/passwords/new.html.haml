@@ -1,10 +1,10 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+- provide(:page_title, 'パスワードの再設定')
+= render "devise/shared/error_messages", resource: resource
+
+.user__password_new
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, html: {class: "user__form"}) do |f|
+    .user__form__info
+      = f.label :email, "メールアドレスを入力してください", class: "label_class"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_class"
+      = f.submit "パスワード再発行リンクを送る", class: "btn_password_new"
+  = render "devise/shared/links"

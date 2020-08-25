@@ -1,15 +1,17 @@
 - provide(:page_title, 'ログインページ')
-
+- flash[:notice]
+- flash[:alert]
 .user__signin
-  = form_for(resource, as: resource_name, url: session_path(resource_name),html: {class: "user__form"}) do |f|
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "user__form"}) do |f|
+    = render "devise/shared/error_messages", resource: resource
     .user__form__info
       = f.label :email, "メールアドレス", class: "label_class"
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_class"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_class",required: true
     .user__form__info
       = f.label :password, "パスワード", class: "label_class"
       %br/
-      = f.password_field :password, autocomplete: "current-password", class: "input_class"
+      = f.password_field :password, autocomplete: "current-password", class: "input_class",required: true
     - if devise_mapping.rememberable?
       .user__form__checkbox
         = f.check_box :remember_me, class: "input_class"
