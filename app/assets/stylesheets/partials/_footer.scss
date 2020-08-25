@@ -1,10 +1,11 @@
 footer {
   background-color: $bg-reverse;
+  color: $h-reverse;
   height: 3rem;
   line-height: 3rem;
-  color: $h-reverse;
   font-size: 0.8rem;
+  text-align: center;
   p {
-    margin: 0 auto;
+    margin: 0;
   }
 }

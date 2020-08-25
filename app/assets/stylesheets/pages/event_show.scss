@@ -1,10 +1,5 @@
 .event__show {
   background-color: $bg-main;
-  h3 {
-    color: $p-main;
-    margin: 0;
-    padding-top: 1em;
-  }
   .event__info {
     padding: 0 1em 1em;
     table {
@@ -36,5 +31,15 @@
       box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
         0 2px 2px rgba(0, 0, 0, 0.19);
     }
+  }
+  h3 {
+    color: $h-main;
+    margin: 0;
+    padding-top: 1em;
+  }
+  .border {
+    margin: 0 auto;
+    width: 16em;
+    border-bottom: dotted 1px $p-main;
   }
 }
