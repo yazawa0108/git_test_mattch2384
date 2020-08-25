@@ -1,0 +1,55 @@
+.user__signup {
+  padding: 0.5em 0 2em 0;
+  background-color: #fffbd6;
+  .user__form {
+    &__info {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 2em auto;
+      label.label_class {
+        width: 40%;
+      }
+      input.input_class {
+        width: 12em;
+        margin-right: 1em;
+      }
+      p {
+        font-size: 0.9em;
+        margin: 0.3em auto;
+      }
+      .user__form--flex {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 40%;
+        .label_class {
+          width: 100%;
+        }
+      }
+      .input_class.pswd_confirmation {
+      height: 1em;
+      }
+    }
+    &__checkbox {
+      margin: 2em auto 1em auto;
+    }
+    &__btn {
+      .btn_sign_up {
+        border: none;
+        background-color: lightskyblue;
+        color: dimgray;
+        width: 15em;
+        height: 2em;
+        border-radius: 1%;
+        margin: 0.5em auto;
+      }
+    }
+    a.link_sign_up {
+      margin-top: 0.5em;
+      line-height: 1.0em;
+      color: red;
+      text-decoration: none;
+    }
+  }
+}

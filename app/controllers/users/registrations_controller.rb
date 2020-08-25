@@ -2,12 +2,6 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-  def destroy
-    resource.betray_flg = 1
-    resource.save
-    redirect_to root_path
-  end
-
   #アカウント登録後のリダイレクト先
   def after_sign_up_path_for(resource)
     root_path
