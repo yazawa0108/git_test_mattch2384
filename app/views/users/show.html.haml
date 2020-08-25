@@ -1,2 +1,43 @@
-%h1 Under construction
-%p ここはUsers#showです
+- provide(:page_title, 'ユーザー情報')
+
+.user__info
+  - if @user.profile_image.present?
+    = image_tag @user.profile_image.url, alt: "プロフィール画像", class: "image_prev"
+  - else
+    = image_tag "default.png", alt: "プロフィール画像", id: "img_prev"
+  %table
+    %tr
+      %th 氏名
+      %td
+        = "#{@user.last_name} #{@user.first_name}"
+    -# 本人もしくはユーザーがエントリーしている案件のownerのみemail開示
+    -# -if current_user.id == @user.id || @array.include?(@user.id)
+    -if current_user.id == @user.id || @owners.include?(current_user.id)
+      %tr
+        %th 連絡先
+        %td
+          =@user.email
+    %tr
+      %th 生年月日
+      %td
+        - if @user.birthday.present?
+          = @user.birthday
+        - else
+          = "---"
+    %tr
+      %th 性別
+      %td
+        - if @user.gender.present?
+          = @user.gender
+        - else
+          = "---"
+    %tr
+      %th 実績
+      %td
+        - if @user.achievement.present?
+          = @user.achievement
+        - else
+          = "---"
+  - if current_user.id == @user.id
+    = button_to "編集する", edit_user_registration_path, method: :get
+  = link_to "戻る", :back
