@@ -1,21 +1,24 @@
-// Background Color
+// Base Main (White)
 $bg-main: #fffffe;
-$bg-sub: #f9f4ef;
-
-// Headline Color
-$headline-main: #020826;
-
-// Paragraph Calor
+$h-main: #020826;
 $p-main: #716040;
-$p-highlight: #f25042;
+$block-main: #eaddcf;
+
+// Base Sub
+$bg-sub: #f9f4ef;
+$h-sub: #020826;
+$p-sub: #716040;
+$block-sub: #fffffe;
+
+// Base Reverse
+$bg-reverse: #8c7851;
+$h-reverse: #fffffe;
+$p-reverse: #020826;
+$block-reverse: #eaddcf;
 
 // Button Color
 $btn-main: #8c7851;
 $btn-text-main: #fffffe;
-$: ;
-$: ;
-$: ;
-$: ;
-$: ;
-$: ;
-$: ;
+
+// Others
+$highlight: #f25042;

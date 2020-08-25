@@ -1,17 +1,15 @@
--# ユーザーカード複数使用の際は、使用元hamlでeachメソッドを使用し、引数をuserに設定する。
+// ユーザーカード複数使用の際は、使用元hamlでeachメソッドを使用し、引数をuserに設定する。
 
-.users__list
-  %ul
-    %li.user__index-card
-      = link_to "", user_path(user.id), class: "user-detail"
-      .user__card
-        .user-image
-          - if user.profile_image?
-            = image_tag user.profile_image.index.url, alt: 'profile image', class: 'index__profile-image'
-          - else
-            = image_tag 'default.png', alt: 'profile image', class: 'index__profile-image'
-        .user-info
-          %p.name= "#{user.last_name} #{user.first_name}"
-          %p.score
-            評価：
-            %span 4.5
+%ul.users__list
+  %li.user__card
+    = link_to "", user_path(user.id), class: "link__card"
+    .user-image
+      - if user.profile_image?
+        = image_tag user.profile_image.index.url, alt: 'profile image', class: 'index__image'
+      - else
+        = image_tag 'default.png', alt: 'profile image', class: 'index__profile-image'
+    .user-info
+      = "#{user.last_name} #{user.first_name}"
+      %br
+      評価：
+      %span 4.5

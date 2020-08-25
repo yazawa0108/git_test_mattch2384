@@ -1,8 +1,8 @@
 footer {
-  background-color: rgb(180, 180, 180);
+  background-color: $bg-reverse;
   height: 3rem;
   line-height: 3rem;
-  // color: #fff;
+  color: $h-reverse;
   font-size: 0.8rem;
   p {
     margin: 0 auto;

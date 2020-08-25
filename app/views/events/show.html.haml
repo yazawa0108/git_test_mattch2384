@@ -4,26 +4,6 @@
   %p= flash[:notice]
 
 .event__show
-  -# 下記オーナー以外のview
-  - if current_user == nil || @event.owner_id != current_user.id
-    .owner__info
-      %h3 発注者
-      = render partial: 'shared/user_index_card', locals: { user: @owner }
-      -# 下記オーナーの場合のView
-  - else
-    .applicant__list
-      %h3 エントリーユーザー
-      - if @applicants.blank?
-        %p エントリーユーザーはまだいません。
-      - else
-        %ul
-          - @applicants.each do |applicant|
-            - user = User.find(applicant.applicant_user_id)
-            %li
-              = render partial: 'shared/user_index_card', locals: { user: user }
-              -# 下記オーナー以外のView
-
-
   .event__info
     %table
       %tr
@@ -108,3 +88,19 @@
   - else
     .entry__btn
       = button_to "案件の編集", edit_event_path(@event.id), method: :get
+
+  -# 下記オーナー以外のview
+  - if current_user == nil || @event.owner_id != current_user.id
+    .owner__info
+      %h3 発注者
+      = render partial: 'shared/user_index_card', locals: { user: @owner }
+    -#  下記オーナーの場合のView
+  - else
+    .applicant__list
+      %h3 エントリーユーザー
+      - if @applicants.blank?
+        %p エントリーユーザーはまだいません。
+      - else
+        - @applicants.each do |applicant|
+        - user = User.find(applicant.applicant_user_id)
+          = render partial: 'shared/user_index_card', locals: { user: user }
