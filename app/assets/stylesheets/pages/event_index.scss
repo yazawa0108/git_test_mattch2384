@@ -1,11 +1,11 @@
-.greeting {
-  color: $p-main;
-}
-
 .event-index {
+  .greeting {
+    color: $p-main;
+    margin: 0;
+  }
   background-color: $bg-main;
   .sort__box {
-    padding: 1em 0;
+    padding: 1.5em 0;
     form {
       display: flex;
       align-items: center;
@@ -50,61 +50,12 @@
   }
 
   .events__list {
-    padding: 1em;
+    background-color: $bg-sub;
+    list-style: none;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0;
+    padding: 1.5em 0 0;
     margin: 0;
-    .event__card {
-      width: 23em;
-      border: 2px double #ddd;
-      list-style: none;
-      background-color: #ffffff;
-      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
-      position: relative;
-      margin-bottom: 2em;
-      &:hover {
-        opacity: 0.7;
-      }
-      a.event-detail-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-indent: -999px;
-      }
-      h5 {
-        margin: 0 auto;
-        padding: 0.5em 0;
-        background-color: #f1d0aa;
-        font-size: 1.2em;
-      }
-      table {
-        // border-collapse: collapse;
-        tr {
-          line-height: 2;
-          // border: 1px solid gray;
-          th {
-            width: 18%;
-            font-size: 1em;
-            background-color: #f0efef;
-            text-align: center;
-          }
-          th.small {
-            font-size: 0.8em;
-          }
-          td {
-            width: 25%;
-            font-size: 1em;
-            p.no-margin {
-              margin: 0;
-              line-height: 1;
-            }
-          }
-        }
-      }
-    }
   }
 }

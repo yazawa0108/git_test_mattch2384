@@ -1,5 +1,6 @@
 .event__card
   %a.event-detail-link{ href: event_path(event)}
+  -# = link_to "", event_path(event.id), class: "link__card"
   %h5.event__title= event.name
   %table
     %tr
@@ -9,17 +10,17 @@
         - if event.end_day.present?
           = "〜 #{event.end_day.strftime('%-m月%-d日')}"
     %tr
-      %th.header 勤務地
-      %td.content= event.prefecture.prefecture_name
-      %th.header.small ポジション
-      %td.content= event.position.name
+      %th 場所
+      %td= event.prefecture.prefecture_name
+      %th.small 役割
+      %td= event.position.name
     %tr
-      %th.header 日給
-      %td.content
+      %th 日給
+      %td
         - if event.daily_wage.present?
           = "#{event.daily_wage.to_s(:delimited)}円"
         - else
           = "未定"
-      %th.header 募集
-      %td.content
+      %th 募集
+      %td
         = event.event_status.name

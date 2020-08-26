@@ -1,17 +1,18 @@
 - provide(:page_title, '募集中の案件一覧')
 
-#notice-message
-  %p= flash[:notice]
-
-%p.greeting= "こんにちは #{current_user.last_name } #{current_user.first_name }さん！" if user_signed_in?
-
 .event-index
+  #notice-message
+    %p= flash[:notice]
+
+  %p.greeting= "こんにちは #{current_user.last_name } #{current_user.first_name }さん！" if user_signed_in?
+
   .sort__box
     = form_with url: search_events_path, method: :get, local: true do |f|
       = f.select :change, [["案件登録日新しい順", "created_at desc"],["案件登録日古い順", "created_at asc"],["現場の日程近い順", "start_day asc"],["現場の日程遠い順", "start_day desc"],["日給が高い順", "daily_wage desc"]], include_blank: "並び替え"
       = f.submit "ソート"
-  - @events.each do |event|
-    %ul.events__list
+
+  %ul.events__list
+    - @events.each do |event|
       %li
         = render partial: 'shared/event_index_card', locals: { event: event}
   = will_paginate(@events, :renderer => WillPaginate::ActionView::LinkRenderer)
