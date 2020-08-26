@@ -5,7 +5,7 @@
     .form
       = form_with model: @event, local: true do |f|
         = render 'shared/error_messages'
-        %p ※赤文字は入力必須の項目です。
+        %p.must は入力必須の項目です。
 
         %li.form
           = f.label "案件名", class: "label_class must"
