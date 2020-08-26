@@ -21,24 +21,21 @@
       %th 生年月日
       %td
         - if @user.birthday.present?
-          = @user.birthday
+          = @user.birthday.strftime("%Y年%-m月%-d日")
         - else
           = "---"
     %tr
       %th 性別
       %td
         - if @user.gender.present?
-          - if @user.gender == 1
-            = "男性"
-          - elsif @user.gender == 2
-            = "女性"
+          = @user.gender_i18n
         - else
           = "---"
     %tr
       %th 実績
       %td.font_adjust
         - if @user.achievement.present?
-          = @user.achievement
+          = safe_join(@user.achievement.split("\n"), tag(:br))
         - else
           = "---"
   - if current_user.id == @user.id

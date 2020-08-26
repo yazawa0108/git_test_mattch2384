@@ -15,4 +15,7 @@ class User < ApplicationRecord
 
   # :profile_imageカラムに画像のURL格納
   mount_uploader :profile_image, ImageUploader
+
+  #Userモデル genderカラムにenumを適応
+  enum gender: { man: 1, woman: 2}
 end
