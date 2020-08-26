@@ -1,0 +1,46 @@
+.user__info {
+  background-color: rgb(255, 251, 214);
+  padding: 1em;
+  .img_prev {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 0 auto 1em auto;
+    tr {
+      line-height: 2em;
+      border: 1px solid gray;
+      th {
+        background-color: #f0efef;
+        width: 8em;
+      }
+      td {
+        background-color: #fff;
+        width: 14em;
+      }
+      td.font_adjust {
+        padding: 0.5em;
+        line-height: 1.2em;
+        font-size: 0.8em;
+      }
+    }
+  }
+  .btn_user_edit {
+    border: none;
+        background-color: lightskyblue;
+        color: dimgray;
+        width: 10em;
+        height: 2em;
+        border-radius: 1%;
+        margin: 0.5em auto;
+  }
+  .link_user_edit {
+    display: block;
+    margin-top: 0.5em;
+    line-height: 1.0em;
+    text-decoration: none;
+    color: dimgray;
+  }
+}
