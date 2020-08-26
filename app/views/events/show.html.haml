@@ -72,37 +72,38 @@
             = "---"
 
   - if current_user == nil
-    .entry__btn
+    .btn.entry__btn
       = button_to "案件にエントリー", new_user_session_path
       -# エントリー済み = エントリー取り消し
-
   - elsif @applicant.nil? && @event.owner_id != current_user.id
-    .entry__btn
+    .btn.entry__btn
       = button_to "案件にエントリー", applicants_path(applicant_user_id: current_user.id, event_id: @event.id), data: {confirm: "エントリーします。" }
-
       -# オーナー以外（その他） = 通常
   - elsif @applicant.present? && @event.owner_id != current_user.id
-    .entry__btn
+    .btn.entry-cancel__btn
       = button_to "エントリーの取消", applicant_path(@applicant.id, event_id: @event.id), method: :delete, data: {confirm: "エントリー取り消しますがよろしいですか？" }
-
   - else
-    .entry__btn
+    .btn.edit__btn
       = button_to "案件の編集", edit_event_path(@event.id), method: :get
+
 
   -# 下記オーナー以外のview
   - if current_user == nil || @event.owner_id != current_user.id
     .owner__info
       %h3 発注者
       .border
-      = render partial: 'shared/user_index_card', locals: { user: @owner }
+      .owner__card
+        = render partial: 'shared/user_index_card', locals: { user: @owner }
     -#  下記オーナーの場合のView
   - else
-    .applicant__list
+    .applicant__info
       %h3 エントリーユーザー
       .border
       - if @applicants.blank?
         %p エントリーユーザーはまだいません。
       - else
-        - @applicants.each do |applicant|
-        - user = User.find(applicant.applicant_user_id)
-          = render partial: 'shared/user_index_card', locals: { user: user }
+        %ul.applicant__list
+          - @applicants.each do |applicant|
+          - user = User.find(applicant.applicant_user_id)
+            %li
+              = render partial: 'shared/user_index_card', locals: { user: user }

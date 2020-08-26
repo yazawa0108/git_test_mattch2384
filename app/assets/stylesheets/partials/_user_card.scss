@@ -1,0 +1,43 @@
+.user__card {
+  position: relative;
+  width: 8em;
+  list-style: none;
+  background-color: $bg-reverse;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.32);
+  margin: 1em;
+  &:hover {
+    opacity: 0.7;
+  }
+  a.link__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -999px;
+  }
+  .user-image {
+    margin: 0;
+    padding: 0.5em;
+    img {
+      border-radius: 50%;
+      width: 100px;
+    }
+  }
+  .user-info {
+    border-bottom: 4px solid $bg-reverse;
+    margin: 0 4px;
+    padding: 0.2em 0;
+    text-align: center;
+    background-color: $bg-main;
+    color: $h-main;
+    font-size: 1.2em;
+    line-height: 1.5;
+    span.small {
+      font-size: 0.8em;
+    }
+    span.highlight {
+      color: $highlight;
+    }
+  }
+}

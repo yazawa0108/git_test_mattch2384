@@ -19,7 +19,7 @@
       }
     }
   }
-  .entry__btn {
+  .btn {
     padding-bottom: 1em;
     input {
       border: none;
@@ -29,6 +29,23 @@
       border-radius: 4px;
       box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
         0 2px 2px rgba(0, 0, 0, 0.19);
+    }
+  }
+  .owner__info {
+    .owner__card {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .applicant__info {
+    .applicant__list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1em 0;
+      margin: 0;
     }
   }
   h3 {
