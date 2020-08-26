@@ -1,8 +1,9 @@
 - provide(:page_title, '募集中の案件一覧')
 
 .event-index
-  #notice-message
-    %p= flash[:notice]
+  - if flash.present?
+    #notice-message
+      %p= flash[:notice]
 
   %p.greeting= "こんにちは #{current_user.last_name } #{current_user.first_name }さん！" if user_signed_in?
 
