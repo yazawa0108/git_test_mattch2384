@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_instances, only: [:new, :edit]
+  before_action :set_instances, only: [:new, :create, :edit, :update]
 
   def index
     @events = Event.paginate(page: params[:page], per_page: 10).order("id DESC")
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to events_path, notice: "案件が投稿されました。"
+      redirect_to events_path, notice: "案件が投稿されました"
     else
       render 'events/new'
     end
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to event_path(@event.id), notice: "案件が更新されました。"
+      redirect_to event_path(@event.id), notice: "案件が更新されました"
     else
       render 'events/edit'
     end
@@ -51,7 +51,7 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
-    redirect_to events_path, notice: "案件が削除されました。"
+    redirect_to events_path, notice: "案件が削除されました"
   end
 
 

@@ -1,11 +1,16 @@
 .error_explanation {
   h3 {
-    font-size: 0.7em;
-    color: rgb(255, 78, 78);
+    color: $highlight;
   }
   li.error {
-    font-size: 0.5em;
+    font-size: 0.8em;
     margin: 0.5em auto;
-    text-align: center;
+  }
+}
+
+.field_with_errors {
+  input,
+  select {
+    border: 1px solid $highlight !important;
   }
 }

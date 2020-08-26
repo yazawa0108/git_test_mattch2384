@@ -1,8 +1,16 @@
 #notice-message {
-  background-color: lightblue;
-  text-align: center;
-}
-
-#flash-message {
+  background-color: $block-main;
   color: $highlight;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  p {
+    margin: 0;
+    padding: 0;
+    &::before {
+      content: "▼ ";
+    }
+    &::after {
+      content: " ▼";
+    }
+  }
 }

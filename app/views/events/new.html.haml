@@ -5,7 +5,7 @@
     .form
       = form_with model: @event, local: true do |f|
         = render 'shared/error_messages'
-        %p ※赤文字は入力必須の項目です。
+        %p.must は入力必須の項目です。
 
         %li.form
           = f.label "案件名", class: "label_class must"
@@ -52,7 +52,7 @@
           = f.number_field :daily_wage, class: "input_class", placeholder: "半角数字で入力"
 
         %li.form.detail
-          = f.label "その他案件詳細"
+          = f.label "その他詳細"
           = f.text_area :detail, rows: 10, class: "others__input", placeholder: "上記以外に必要な情報など。 \n例）交通費/食事の支給の有無、服装、持ち物、注意事項などご記入ください。"
 
         .submit__btn
