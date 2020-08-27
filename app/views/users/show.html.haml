@@ -11,7 +11,6 @@
       %td
         = "#{@user.last_name} #{@user.first_name}"
     -# 本人もしくはユーザーがエントリーしている案件のownerのみemail開示
-    -# -if current_user.id == @user.id || @owners.include?(current_user.id)
     -if current_user.id == @user.id || @array.include?(@user.id)
       %tr
         %th 連絡先
