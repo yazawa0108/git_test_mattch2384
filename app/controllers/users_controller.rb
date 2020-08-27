@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.active
   end
 
   def show
@@ -13,11 +13,6 @@ class UsersController < ApplicationController
         @array << applicant.applicant_user_id
       end
     end
-    # @applicants = Applicant.where(applicant_user_id: @user.id)
-    # @owners = []
-    # @applicants.each do |applicant|
-      # @owners << Event.where(id: applicant.event_id).owner_id
-    # end
   end
 
   private
