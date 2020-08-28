@@ -1,23 +1,25 @@
-.user__info {
-  background-color: rgb(255, 251, 214);
+.user__show {
+  background-color:$bg-main;
   padding: 1em;
   .img_prev {
     width: 10em;
     height: 10em;
     border-radius: 50%;
+    border: 0.6em solid $bg-sub;
+    
   }
   table {
     border-collapse: collapse;
-    margin: 0 auto 1em auto;
+    margin: 0.5em auto 1em auto;
+    background-color: $bg-sub;
     tr {
       line-height: 2em;
-      border: 1px solid gray;
       th {
-        background-color: #f0efef;
+        color: $h-sub;
         width: 8em;
       }
       td {
-        background-color: #fff;
+        color: $p-main;
         width: 14em;
       }
       td.font_adjust {
@@ -29,16 +31,16 @@
   }
   .btn_user_edit {
     border: none;
-        background-color: lightskyblue;
-        color: dimgray;
-        width: 10em;
-        height: 2em;
-        border-radius: 1%;
-        margin: 0.5em auto;
+    padding: 0.25em 0.5em;
+    color: $btn-text-main;
+    background: $btn-main;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+      0 2px 2px rgba(0, 0, 0, 0.19);
   }
   .link_user_edit {
     display: block;
-    margin-top: 0.5em;
+    margin-top: 1em;
     line-height: 1.0em;
     text-decoration: none;
     color: dimgray;

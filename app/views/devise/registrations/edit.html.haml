@@ -35,7 +35,7 @@
 
         %li.form--flex
           = f.label :email, "メールアドレス", class: "input_label"
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: "input_mail_password  field_font"
+          = f.email_field :email, autocomplete: "email", class: "input_mail_password  field_font"
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %div
             Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -54,5 +54,5 @@
           = f.submit "会員情報を更新する", class: "form__btn"
 
   .btn__destroy
-    %p.explain_destroy ユーザー登録を解除する方はボタンをクリックしてください。
+    %p.explain_destroy 登録解除は以下のボタンをクリックしてください。
     = button_to "退会する", user_registration_path, data: { confirm: "本当に退会しますか?" }, method: :delete, class: "form__btn--red"

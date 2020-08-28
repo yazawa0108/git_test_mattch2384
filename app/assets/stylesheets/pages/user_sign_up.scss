@@ -1,6 +1,6 @@
 .user__signup {
-  padding: 0.5em 0 2em 0;
-  background-color: #fffbd6;
+  padding: 0.5em 0 1em 0;
+  background-color:$bg-sub;
   .user__form {
     &__info {
       display: flex;
@@ -9,14 +9,27 @@
       margin: 2em auto;
       label.label_class {
         width: 40%;
+        color: $p-main;
       }
       input.input_class {
         width: 12em;
         margin-right: 1em;
+        border: none;
+        padding: 0.25em 0.5em;
+        color: $p-main;
+        background: $bg-main;
+        border-radius: 4px;
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+          0 2px 2px rgba(0, 0, 0, 0.19);
+        &::placeholder {
+          font-size: 0.8em;
+          color: $p-main;
+        }
       }
       p {
         font-size: 0.9em;
         margin: 0.3em auto;
+        color: $p-main;
       }
       .user__form--flex {
         display: flex;
@@ -36,20 +49,39 @@
     }
     &__btn {
       .btn_sign_up {
+        margin-bottom: 1.0em;
         border: none;
-        background-color: lightskyblue;
-        color: dimgray;
-        width: 15em;
-        height: 2em;
-        border-radius: 1%;
-        margin: 0.5em auto;
+        padding: 0.25em 0.5em;
+        color: $btn-text-main;
+        background: $btn-main;
+        border-radius: 4px;
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+          0 2px 2px rgba(0, 0, 0, 0.19);
       }
     }
-    a.link_sign_up {
-      margin-top: 0.5em;
-      line-height: 1.0em;
-      color: red;
-      text-decoration: none;
+    P {
+      color: $p-main;;
+      a.link_sign_up {
+        margin-top: 0.5em;
+        line-height: 1.0em;
+        color: $bg-reverse;
+      }
+      a:hover {
+        color: $p-main;
+      }
+      a:active {
+        color: $bg-sub;
+      }
     }
+  }
+  a.link__sign_up {
+    color: $p-main;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $bg-reverse;
+  }
+  a:active {
+    color: $bg-sub;
   }
 }
