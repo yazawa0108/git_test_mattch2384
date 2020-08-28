@@ -22,11 +22,11 @@
 
         %li.form
           = f.label "想定集合時間", class: "label_class"
-          = f.time_select :work_start_time, include_blank: true, ignore_data:true, start_hour: 6, end_hour: 23, minute_step: 15, class: "input_class"
+          = f.time_select :work_start_time, {ignore_date: true, include_blank: true, start_hour: 6, end_hour: 23, minute_step: 15}, {class: "input_time"}
 
         %li.form
           = f.label "想定解散時間", class: "label_class"
-          = f.time_select :work_end_time, include_blank: true, ignore_data:true, start_hour: 6, end_hour: 23, minute_step: 15, class: "input_class"
+          = f.time_select :work_end_time, {ignore_date: true, include_blank: true, start_hour: 6, end_hour: 23, minute_step: 15}, {class: "input_time"}
 
         %li.form
           = f.label "会場名", class: "label_class"

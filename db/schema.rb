@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_032954) do
     t.bigint "owner_id"
     t.date "start_day"
     t.date "end_day"
-    t.time "work_start_time"
-    t.time "work_end_time"
     t.bigint "prefecture_id"
     t.string "address"
     t.integer "daily_wage"
@@ -44,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_032954) do
     t.string "place_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "work_end_time"
+    t.time "work_start_time"
     t.index ["event_status_id"], name: "index_events_on_event_status_id"
     t.index ["owner_id"], name: "index_events_on_owner_id"
     t.index ["position_id"], name: "index_events_on_position_id"

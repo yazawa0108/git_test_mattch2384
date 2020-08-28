@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def destroy
     resource.betray_flg = 1
+    resource.email.insert(0,SecureRandom.alphanumeric(3))
     resource.save
     reset_session
     redirect_to root_path

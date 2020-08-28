@@ -1,8 +1,8 @@
 - provide(:page_title, 'ユーザー情報')
 
-.user__info
+.user__show
   - if @user.profile_image.present?
-    = image_tag @user.profile_image.url, alt: "プロフィール画像", class: "image_prev"
+    = image_tag @user.profile_image.url, alt: "プロフィール画像", class: "img_prev"
   - else
     = image_tag "default.png", alt: "プロフィール画像", class: "img_prev"
   %table
