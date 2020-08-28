@@ -27,6 +27,10 @@
           width: 12em;
           margin-right: 1em;
         }
+        .input_time {
+          width: 4em;
+          margin-right: 1em;
+        }
         .must::before {
           content: "*";
           color: $highlight;
