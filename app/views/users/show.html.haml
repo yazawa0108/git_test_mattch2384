@@ -11,11 +11,12 @@
       %td
         = "#{@user.last_name} #{@user.first_name}"
     -# 本人もしくはユーザーがエントリーしている案件のownerのみemail開示
-    -if current_user.id == @user.id || @array.include?(@user.id)
-      %tr
-        %th 連絡先
-        %td
-          =@user.email
+    - if user_signed_in?
+      -if current_user.id == @user.id || @array.include?(@user.id)
+        %tr
+          %th 連絡先
+          %td
+            =@user.email
     %tr
       %th 生年月日
       %td
@@ -37,6 +38,7 @@
           = safe_join(@user.achievement.split("\n"), tag(:br))
         - else
           = "---"
-  - if current_user.id == @user.id
-    = button_to "編集する", edit_user_registration_path, method: :get, class: "btn_user_edit"
+  - if user_signed_in?
+    - if current_user.id == @user.id
+      = button_to "編集する", edit_user_registration_path, method: :get, class: "btn_user_edit"
   = link_to "戻る", :back, class: "link_user_edit"

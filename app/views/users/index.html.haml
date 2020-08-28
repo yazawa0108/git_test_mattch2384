@@ -1,8 +1,6 @@
 - provide(:page_title, '登録ユーザー')
 
 .user-index
-  #notice-message
-    %p= flash[:notice]
 
   %p.greeting= "こんにちは #{current_user.last_name } #{current_user.first_name }さん！" if user_signed_in?
 

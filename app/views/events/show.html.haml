@@ -49,6 +49,9 @@
             = " 〜 #{@event.work_end_time.strftime('%H:%M')}"
           = "---" if @work_start_time.nil? && @event.work_end_time.nil?
       %tr
+        %th ポジション
+        %td= @event.position.name
+      %tr
         %th 日給
         %td
           - if @event.daily_wage.present?
