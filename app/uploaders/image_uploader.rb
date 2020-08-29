@@ -4,7 +4,28 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
+
+  if Rails.env.production?
+    CarrierWave.configure do |config|
+      storage :fog
+      config.fog_credentials = {
+        # Amazon S3用の設定
+        :provider              => 'AWS',
+        :region                => ENV['ap-northeast-1'],  # S3に設定したリージョン。
+        :aws_access_key_id     => ENV['AKIAZJ5QJDTOWPJXYNQH'],
+        :aws_secret_access_key => ENV['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']
+      }
+      config.fog_directory     =  ENV['S3_BUCKET']
+      end
+  else
+    storage :file
+  end
+  
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
